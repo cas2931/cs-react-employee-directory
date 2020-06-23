@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
-import DataTable from "../DataTable";
+import UserTable from '../UserTable';
 import Navbar from "../Navbar";
 import API from "../../utils/API";
 import "./UserContainer.css";
-import DataAreaContext from "../../utils/DataAreaContext"
+import UserContainerContext from "../../utils/UserContainerContext"
 
 const UserContainer = () => {
       const [developerState, setDeveloperState] = useState({
@@ -85,17 +85,17 @@ return b[heading]-  a[heading];
       }, []);
     
       return (
-        <DataAreaContext.Provider
+        <UserContainerContext.Provider
           value={{ developerState, handleSearchChange, handleSort }}
         >
           <Navbar />
           <div className="data-area">
             {developerState.filteredUsers.length > 0 
-    ? <DataTable />
+    ? <UserTable />
      : <div></div>
      }
           </div>
-        </DataAreaContext.Provider>
+        </UserContainerContext.Provider>
       );
     }
     
