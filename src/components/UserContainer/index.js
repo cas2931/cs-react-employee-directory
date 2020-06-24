@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import UserTable from '../UserTable';
-import Navbar from "../Navbar";
+import TopBar from "../TopBar";
 import API from "../../utils/API";
 import "./UserContainer.css";
 import UserContainerContext from "../../utils/UserContainerContext"
@@ -49,7 +49,7 @@ const UserContainer = () => {
         } else if (heading ==="name"){
             return b[heading].first.localeCompare(a[heading].first);
         } else {
-return b[heading]-  a[heading];
+          return b[heading]-  a[heading];
         }
     }
     }
@@ -88,8 +88,8 @@ return b[heading]-  a[heading];
         <UserContainerContext.Provider
           value={{ developerState, handleSearchChange, handleSort }}
         >
-          <Navbar />
-          <div className="data-area">
+          <TopBar />
+          <div className='user-container'>
             {developerState.filteredUsers.length > 0 
     ? <UserTable />
      : <div></div>

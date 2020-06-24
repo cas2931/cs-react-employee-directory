@@ -6,16 +6,16 @@ const SearchUser = () => {
     const context = useContext(UserContainerContext);
 
     return (
-        <div className="searchbox">
-            <form className="form-inline">
+        <div className="grid-container">
+            <form className="form-center">
                 <input
-                    className="form-control mr-sm-2"
+                    className="input-group"
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
                     onChange={e => context.handleSearchChange(e)}
                 />
-                <button className="btn my-2 my-sm-0" type="submit">
+                <button className="button alert" type="search">
                     Search
                  </button>
             </form>
